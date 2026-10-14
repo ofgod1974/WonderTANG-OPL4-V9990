@@ -1,0 +1,18 @@
+{
+  "tnCartWonder": {
+    "url": "https://github.com/herraa1/tnCartWonder",
+    "commit": "d3a54f1b0df9e56c0d27ce1d0460f79f593d5568",
+    "source_prefix": "rtl/"
+  },
+  "MoonTANG": {
+    "url": "https://github.com/Papipapito/MoonTANG",
+    "commit": "b2770265d02cdf30c721a8ace12793e63ec6e776",
+    "source_prefix": "moon/"
+  },
+  "integration": "Experimental OPL4 + Tiny9990 for WonderTANG 2.0b / 2.02b; no Nextor",
+  "firmware_sha256": "cacbd4000a5295e315dba0bff4b3e4c03c4886b5517fe7153bab1978ae32fbd1",
+  "gowin_version": "1.9.12",
+  "place_option": 2,
+  "route_option": 0,
+  "validation": "Timing passed for analyzed paths; partial hardware observations; audio BASIC tests pending"
+}

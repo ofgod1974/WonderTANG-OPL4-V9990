@@ -1,0 +1,86 @@
+set_device -name GW2AR-18C GW2AR-LV18QN88C8/I7
+add_file rtl/src/board/board_id.sv
+add_file rtl/src/board/rev1/board_rev1_bus.sv
+add_file rtl/src/board/rev1/board_rev1_tmds.sv
+add_file rtl/src/board/wt200b/board_wt200b_clock.sv
+add_file rtl/src/board/wt200b/board_wt200b_config.sv
+add_file rtl/src/board/rev1/dvi_tx/dvi_tx.v
+add_file rtl/src/cartridge_v9990.sv
+add_file rtl/src/config.sv
+add_file rtl/src/peripheral/msx/bus.sv
+add_file rtl/src/peripheral/ram/ram.sv
+add_file rtl/src/peripheral/ram/sdram.sv
+add_file rtl/src/peripheral/ram/uma.sv
+add_file rtl/src/peripheral/sound/i2s_audio_tx.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_bitmap.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_blit.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_blit_addr.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_blit_bitmask.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_blit_fifo.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_clock.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_color_decode.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_palette.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_pattern.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_port.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_priority.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_ram.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_selector.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_shift_buffer.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_sprite.sv
+add_file rtl/src/peripheral/video/tiny9990/t9990_timing.sv
+add_file rtl/src/peripheral/video/video.sv
+add_file rtl/src/peripheral/video/video_dummy.sv
+add_file rtl/src/peripheral/video/video_upscan.sv
+add_file moon/opl3/opl3_pkg.sv
+add_file moon/opl3/afifo.v
+add_file moon/opl3/calc_envelope_shift.sv
+add_file moon/opl3/calc_phase_inc.sv
+add_file moon/opl3/calc_rhythm_phase.sv
+add_file moon/opl3/channels.sv
+add_file moon/opl3/clk_div.sv
+add_file moon/opl3/control_operators.sv
+add_file moon/opl3/dac_prep.sv
+add_file moon/opl3/edge_detector.sv
+add_file moon/opl3/envelope_generator.sv
+add_file moon/opl3/host_if.sv
+add_file moon/opl3/ksl_add_rom.sv
+add_file moon/opl3/leds.sv
+add_file moon/opl3/mem_multi_bank.sv
+add_file moon/opl3/mem_multi_bank_reset.sv
+add_file moon/opl3/mem_simple_dual_port.sv
+add_file moon/opl3/mem_simple_dual_port_async_read.sv
+add_file moon/opl3/mem_simple_dual_port_bram.sv
+add_file moon/opl3/operator.sv
+add_file moon/opl3/opl3.sv
+add_file moon/opl3/opl3_exp_lut.sv
+add_file moon/opl3/opl3_log_sine_lut.sv
+add_file moon/opl3/phase_generator.sv
+add_file moon/opl3/pipeline_sr.sv
+add_file moon/opl3/reset_sync.sv
+add_file moon/opl3/synchronizer.sv
+add_file moon/opl3/timer.sv
+add_file moon/opl3/timers.sv
+add_file moon/opl3/tremolo.sv
+add_file moon/opl3/trick_sw_detection.sv
+add_file moon/opl3/vibrato.sv
+add_file moon/src/opl4fm.v
+add_file moon/opl4wave/ymf278b_gowin.v
+add_file moon/src/opl4_pcm.v
+add_file moon/src/wave_sdram.v
+add_file moon/src/yrw801_loader.v
+add_file moon/src/flash_rw.v
+add_file moon/src/i2s_feed.v
+add_file moon/src/moontang_shared_core.sv
+add_file rtl/src/wave_uma_bridge.sv
+add_file rtl/src/combined_top.sv
+add_file rtl/src/board/wt200b/board_wt200b.cst
+add_file combined.sdc
+set_option -use_mspi_as_gpio 1 -use_sspi_as_gpio 1
+set_option -top_module WONDER_OPL4_V9990_TOP -verilog_std sysv2017 -include_path {moon/src rtl/src}
+set_option -output_base_name wonder_opl4_v9990
+set_option -place_option 2
+set_option -route_option 0
+run syn
+run pnr
+

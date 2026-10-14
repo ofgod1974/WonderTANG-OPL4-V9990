@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+  <Template>FPGA</Template>
+  <Version>5</Version>
+  <Device name="GW2AR-18C" pn="GW2AR-LV18QN88C8/I7">gw2ar18c-000</Device>
+  <FileList>
+    <File path="rtl/src/board/board_id.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/board/rev1/board_rev1_bus.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/board/rev1/board_rev1_tmds.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/board/wt200b/board_wt200b_clock.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/board/wt200b/board_wt200b_config.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/board/rev1/dvi_tx/dvi_tx.v" type="file.verilog" enable="1" />
+    <File path="rtl/src/cartridge_v9990.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/config.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/msx/bus.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/ram/ram.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/ram/sdram.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/ram/uma.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/sound/i2s_audio_tx.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_bitmap.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_blit.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_blit_addr.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_blit_bitmask.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_blit_fifo.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_clock.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_color_decode.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_palette.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_pattern.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_port.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_priority.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_ram.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_selector.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_shift_buffer.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_sprite.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/tiny9990/t9990_timing.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/video.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/video_dummy.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/peripheral/video/video_upscan.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/opl3_pkg.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/afifo.v" type="file.verilog" enable="1" />
+    <File path="moon/opl3/calc_envelope_shift.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/calc_phase_inc.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/calc_rhythm_phase.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/channels.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/clk_div.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/control_operators.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/dac_prep.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/edge_detector.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/envelope_generator.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/host_if.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/ksl_add_rom.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/leds.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/mem_multi_bank.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/mem_multi_bank_reset.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/mem_simple_dual_port.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/mem_simple_dual_port_async_read.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/mem_simple_dual_port_bram.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/operator.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/opl3.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/opl3_exp_lut.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/opl3_log_sine_lut.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/phase_generator.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/pipeline_sr.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/reset_sync.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/synchronizer.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/timer.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/timers.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/tremolo.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/trick_sw_detection.sv" type="file.verilog" enable="1" />
+    <File path="moon/opl3/vibrato.sv" type="file.verilog" enable="1" />
+    <File path="moon/src/opl4fm.v" type="file.verilog" enable="1" />
+    <File path="moon/opl4wave/ymf278b_gowin.v" type="file.verilog" enable="1" />
+    <File path="moon/src/opl4_pcm.v" type="file.verilog" enable="1" />
+    <File path="moon/src/wave_sdram.v" type="file.verilog" enable="1" />
+    <File path="moon/src/yrw801_loader.v" type="file.verilog" enable="1" />
+    <File path="moon/src/flash_rw.v" type="file.verilog" enable="1" />
+    <File path="moon/src/i2s_feed.v" type="file.verilog" enable="1" />
+    <File path="moon/src/moontang_shared_core.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/wave_uma_bridge.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/combined_top.sv" type="file.verilog" enable="1" />
+    <File path="rtl/src/board/wt200b/board_wt200b.cst" type="file.cst" enable="1" />
+    <File path="combined.sdc" type="file.sdc" enable="1" />
+  </FileList>
+</Project>

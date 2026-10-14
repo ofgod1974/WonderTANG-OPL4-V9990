@@ -1,0 +1,14 @@
+# Generated Gowin outputs; keep reproducible project settings.
+/impl/*
+!/impl/wonder_opl4_v9990_process_config.json
+*.log
+*.bak
+*.tmp
+__pycache__/
+.DS_Store
+Thumbs.db
+# Yamaha sample ROM is supplied separately by the user.
+yrw801*
+YRW801*
+*.rom
+*.ROM

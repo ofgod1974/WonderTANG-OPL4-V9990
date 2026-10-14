@@ -36,8 +36,8 @@ Hardware observations on a Philips NMS8245, Pico+ and WonderTANG in slot 2:
 | Test | Observation |
 |---|---|
 | Pinball Fantasies demo, build b0129, dated 2026-10-10 | Reports OPL4 detected and V9990 not detected; stops. OPL4 detection does not prove audio or wave ROM playback. |
-| Unidentified graphics program, photographed | Severe repeated blocks / corrupted image. |
-| Unidentified program, video supplied by tester | Reported to work on this firmware; exact program still unknown. |
+| Galaga V9990, photographed | Severe repeated blocks / corrupted image. |
+| Wolf3D demo V9990, video supplied by tester | Reported to work on this firmware; exact program still unknown. |
 | V9990 logo animation test, exact program unknown | Logos are drawn but do not move as expected. |
 | OPL4 BASIC FM / PCM / wave ROM / RAM tests | **Pending**. |
 

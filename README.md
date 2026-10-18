@@ -25,6 +25,47 @@ of either project. Exact source revisions and firmware checksum are recorded in
 The WonderTANG hardware project is [lfantoniosi/WonderTANG](https://github.com/lfantoniosi/WonderTANG).
 Original per-file copyright and license notices are retained.
 
+### Forks maintained in this account
+
+| Upstream | Fork |
+|---|---|
+| [Papipapito/MoonTANG](https://github.com/Papipapito/MoonTANG) | [ofgod1974/MoonTANG](https://github.com/ofgod1974/MoonTANG) |
+| [herraa1/tnCartWonder](https://github.com/herraa1/tnCartWonder) | [ofgod1974/tnCartWonder](https://github.com/ofgod1974/tnCartWonder) |
+
+These are separate GitHub forks for tracking the upstream projects. This repository
+remains the combined integration project. The integrated source revisions above
+and in [UPSTREAMS.json](UPSTREAMS.json) remain pinned: creating the forks does not
+update or replace the combined firmware.
+
+## Credits and thanks
+
+This integration builds on the work of the following authors and projects:
+
+| Author / project | Contribution used here |
+|---|---|
+| **Papipapito (Albert)** — [MoonTANG](https://github.com/Papipapito/MoonTANG) / MSXimus | Standalone OPL4 integration, PCM glue, wave-memory interface, YRW801 loader, mixer, I2S hand-off and MSX test programs. MoonTANG credits **Claude (Anthropic)** as a pair-programming co-author of that upstream port. |
+| **Shinobu Hashimoto (buppu3)** — [tnCart](https://github.com/buppu3/tnCart) | Tiny9990 graphics, command engine, MSX bus front-end, SDRAM/UMA controller and video infrastructure. |
+| **Albert Herranz (herraa1)** — [tnCartWonder](https://github.com/herraa1/tnCartWonder) | WonderTANG port, wt200b board mapping and clocking, and I2S transmitter. |
+| **Luis Felipe Antoniosi (lfantoniosi)** — [WonderTANG](https://github.com/lfantoniosi/WonderTANG) | Cartridge hardware and pinout; the original SPI flash reader underlying MoonTANG's flash interface. |
+| **Greg Taylor (gtaylormb)** — [OPL3 FPGA](https://github.com/gtaylormb/opl3_fpga) | OPL3 FM core. Its upstream credits include Robson Cozendey, Steffen Ohrendorf, Nuke.YKT and carbon14/opl3 for algorithm and reverse-engineering origins. |
+| **Jokin Miragaia (antxiko)** — mangOPL4 | Gowin adaptations and the OPL3/MoonSound cartridge wrapper inherited through MoonTANG. |
+| **srg320** — [Arcade-PsikyoSH2_MiSTer](https://github.com/srg320/Arcade-PsikyoSH2_MiSTer) | YMF278B PCM/wavetable engine, derived from MAME's ymf278b implementation by **R. Belmont, Olivier Galibert and hap**. |
+| **Dan Gisselquist** — Gisselquist Technology | Asynchronous FIFO used by the FM host interface. |
+| **Gowin Semiconductor** and **Sipeed** | Gowin FPGA primitives and the vendor DVI_TX IP carried by tnCartWonder; Tang Nano 20K hardware and tool support. |
+
+Original source notices and license texts are retained in the files and in
+[LICENSES](LICENSES/). The integration changes are described below under
+[Integration changes](#integration-changes); upstream work is attributed to its
+original authors, and no upstream endorsement is implied.
+
+For the inherited component history, see the [MoonTANG credits at our starting
+revision](https://github.com/Papipapito/MoonTANG/blob/b2770265d02cdf30c721a8ace12793e63ec6e776/CREDITS.md)
+and the preserved [third-party notices](LICENSES/MoonTANG-third-party.md).
+Those notices also cover other MoonTANG builds: this combined build uses the
+tnCart SDRAM/UMA controller and Gowin DVI_TX; the separate MoonTANG HDMI-audio,
+MSX-Audio and alternate-board components are outside this build.
+
+
 ## Current validation and known problems
 
 Build: Gowin 1.9.12, placement 2 / routing 0. Timing passes for analyzed paths,

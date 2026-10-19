@@ -25,18 +25,6 @@ of either project. Exact source revisions and firmware checksum are recorded in
 The WonderTANG hardware project is [lfantoniosi/WonderTANG](https://github.com/lfantoniosi/WonderTANG).
 Original per-file copyright and license notices are retained.
 
-### Forks maintained in this account
-
-| Upstream | Fork |
-|---|---|
-| [Papipapito/MoonTANG](https://github.com/Papipapito/MoonTANG) | [ofgod1974/MoonTANG](https://github.com/ofgod1974/MoonTANG) |
-| [herraa1/tnCartWonder](https://github.com/herraa1/tnCartWonder) | [ofgod1974/tnCartWonder](https://github.com/ofgod1974/tnCartWonder) |
-
-These are separate GitHub forks for tracking the upstream projects. This repository
-remains the combined integration project. The integrated source revisions above
-and in [UPSTREAMS.json](UPSTREAMS.json) remain pinned: creating the forks does not
-update or replace the combined firmware.
-
 ## Credits and thanks
 
 This integration builds on the work of the following authors and projects:

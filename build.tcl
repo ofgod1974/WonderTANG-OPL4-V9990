@@ -78,7 +78,7 @@ add_file rtl/src/board/wt200b/board_wt200b.cst
 add_file combined.sdc
 set_option -use_mspi_as_gpio 1 -use_sspi_as_gpio 1
 set_option -top_module WONDER_OPL4_V9990_TOP -verilog_std sysv2017 -include_path {moon/src rtl/src}
-set_option -output_base_name wonder_opl4_v9990
+set_option -output_base_name wonder_opl4_v9990_flagfix
 set_option -place_option 2
 set_option -route_option 0
 run syn

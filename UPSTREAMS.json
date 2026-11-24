@@ -10,9 +10,12 @@
     "source_prefix": "moon/"
   },
   "integration": "Experimental OPL4 + Tiny9990 for WonderTANG 2.0b / 2.02b; no Nextor",
-  "firmware_sha256": "cacbd4000a5295e315dba0bff4b3e4c03c4886b5517fe7153bab1978ae32fbd1",
+  "firmware_sha256": "256c658fbe7e0be09aeeb57c3cd7ef7174c82f88c55fc688895a505c40b55734",
   "gowin_version": "1.9.12",
   "place_option": 2,
   "route_option": 0,
-  "validation": "Timing passed for analyzed paths; partial hardware observations; audio BASIC tests pending"
+  "validation": "Zero analyzed setup/hold violations, minimum setup slack 0.009 ns. Tester reports good V9990 graphics and OPL4 audio in Monkey Island 1 and 2 conversions; no full RTL simulation or exhaustive hardware validation.",
+  "version": "0.2.0",
+  "local_alias": "Versione 1 / flag-only",
+  "firmware_file": "firmware/wonder_opl4_v9990_v0.2.0.fs"
 }

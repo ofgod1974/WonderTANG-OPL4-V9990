@@ -51,32 +51,25 @@ Aprire una console nella cartella dei sorgenti e lanciare:
 gw_sh build.tcl
 ```
 
-L'output previsto è `impl/pnr/wonder_opl4_v9990.fs`.
+L'output previsto è `impl/pnr/wonder_opl4_v9990_flagfix.fs`.
 La presenza del file non sostituisce la verifica dei report di sintesi e timing.
 Non utilizzare output di una compilazione precedente dopo un errore.
 Il file consegnato supera il timing dei percorsi analizzati, con un margine
-minimo di setup di circa 0,016 ns. Il margine è stretto: la prova fisica,
+minimo di setup di circa 0,009 ns. Il margine è stretto: la prova fisica,
 in particolare con video e audio simultanei, resta necessaria.
 
 ## Prove sull'hardware
 
-Questa integrazione non è stata provata su una WonderTANG fisica.
-Prima prova del firmware in SRAM, senza rendere permanente il cambio.
-Inserire la cartuccia a MSX spento, collegare USB e caricare il `.fs` in SRAM.
-La SRAM è volatile: non togliere alimentazione alla Tang tra caricamento e prova.
-Accendere quindi il MSX mantenendo l'alimentazione USB durante il primo test.
-Non inserire o rimuovere la cartuccia a MSX acceso.
-Preparare una copia del firmware funzionante precedente.
-Se YRW801 è già nella flash a 200000h, non serve riscriverla per il test SRAM.
-Se manca, usare la propria immagine YRW801 da 2.097.152 byte, come file `.bin`.
-In Gowin Programmer scegliere External Flash Mode, operazione
-`exFlash C Bin Erase,Program thru GAO-Bridge`, Generic Flash e Start Address
-`0x200000`. Nella maschera con sette cifre esadecimali è `0x0200000`:
-il valore numerico deve essere 2.097.152, non 131.072 e non 33.554.432.
-Programmare la ROM prima di caricare il firmware combinato in SRAM,
-perché l'operazione GAO-Bridge sostituisce temporaneamente il circuito FPGA.
-La programmazione permanente del `.fs` può cancellare dati: verificare
-nuovamente YRW801 dopo ogni scrittura della flash.
+La versione 0.2.0 corrisponde alla "Versione 1" provata dal proprietario con
+Monkey Island 1 e 2: grafica V9990 e audio OPL4 riferiti come funzionanti,
+con miglioramento rispetto ai glitch del firmware precedente. Non e una
+validazione completa. I test BASIC elencati sotto restano da registrare.
+
+Per la programmazione permanente e il ritorno al firmware precedente,
+seguire [le note della versione 0.2.0](releases/v0.2.0.md).
+Programmare con cartuccia estratta dal MSX e scollegare USB prima di
+reinserirla a MSX spento. Il firmware va a 0x000000, YRW801 a 0x200000.
+La ROM Yamaha non e distribuita nel repository.
 
 Usare il video del MSX per BASIC/DOS e la porta HDMI della Tang per V9990.
 L'audio esce da SOUNDIN/J3, non dall'HDMI.
@@ -90,7 +83,7 @@ L'audio esce da SOUNDIN/J3, non dall'HDMI.
 4. `MT4YRW.ASC` per contenuto dei campioni e `MT5RAM.ASC` per RAM scrivibile.
 5. `MT2FM.ASC` e `MT6PCM.ASC` per audio FM e PCM.
 6. Riprovare la stessa versione di Galaga V9990 già funzionante sul firmware
-   precedente. I difetti originali di Tiny9990 non sono corretti qui.
+   precedente. Questa versione corregge soltanto il flag di completamento, non tutti i difetti di Tiny9990.
 7. Provare software che usi simultaneamente V9990 e OPL4: test separati dei
    due dispositivi non verificano la banda della SDRAM sotto carico combinato.
 

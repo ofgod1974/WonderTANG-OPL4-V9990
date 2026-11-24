@@ -11,6 +11,18 @@ WonderTANG 2.0b / 2.02b with Tang Nano 20K (GW2AR-LV18QN88C8/I7).
 - No Nextor, memory mapper, SCC, OPLL or MSX-Audio in this build.
 - Boot and storage provided by a separate cartridge, such as Pico+.
 
+## Version 0.2.0 - tested "Versione 1"
+
+This is the **flag-only** build tested by the project owner. Download
+[`wonder_opl4_v9990_v0.2.0.fs`](firmware/wonder_opl4_v9990_v0.2.0.fs)
+and verify [SHA256SUMS](firmware/SHA256SUMS).
+It fixes the Tiny9990 command-completion flag; it retains the previous UMA
+arbitration and does not add HDMI audio. The separate experimental build with
+new arbitration (locally called "Versione 2") is **not included**.
+
+See [release notes](docs/releases/v0.2.0.md) for programming and rollback,
+and [hardware test records](docs/hardware-tests.md) for the scope of validation.
+
 ## Upstream projects
 
 This integration derives from two separate projects. It is not an official release
@@ -56,11 +68,27 @@ MSX-Audio and alternate-board components are outside this build.
 
 ## Current validation and known problems
 
-Build: Gowin 1.9.12, placement 2 / routing 0. Timing passes for analyzed paths,
-with approximately **0.016 ns minimum setup slack**. This small margin and the
-upstream-derived constraints do not establish full hardware correctness.
+Version 0.2.0: Gowin 1.9.12, placement 2 / routing 0. The analyzed paths have
+zero setup and hold violations, with **0.009 ns minimum setup slack**.
+This very small margin and the inherited constraints do not establish full
+hardware correctness. There has been no full event-driven RTL simulation.
 
-Hardware observations on a Philips NMS8245, Pico+ and WonderTANG in slot 2:
+Hardware reports from the project owner, Philips NMS8245, Pico+ and WonderTANG:
+
+| Test on version 0.2.0 | Observation |
+|---|---|
+| Monkey Island 1, V9990/OPL4 conversion | Tester reports good V9990 graphics and OPL4 audio together. Previous firmware showed incorrect colors and graphics glitches with the same game. |
+| Monkey Island 2, V9990/OPL4 conversion | Tester reports good V9990 graphics and OPL4 audio together. Exact conversion versions and test duration were not supplied. |
+| BASIC FM / PCM / wave ROM / RAM tests | No completed results recorded. |
+| Other V9990 programs and game completion | Not established by these two reports. |
+
+These are user-reported observations, not independent or exhaustive validation.
+The new-arbitration experiment remains separate and has no recorded MSX test.
+
+### Historical observations on the earlier firmware
+
+The following reports predate the completion-flag fix. They have not all been
+retested on 0.2.0 and must not be read as current results for this release.
 
 | Test | Observation |
 |---|---|
@@ -70,8 +98,6 @@ Hardware observations on a Philips NMS8245, Pico+ and WonderTANG in slot 2:
 | V9990 logo animation test, exact program unknown | Logos are drawn but do not move as expected. |
 | OPL4 BASIC FM / PCM / wave ROM / RAM tests | **Pending**. |
 
-These observations must not be interpreted as complete V9990 or OPL4 validation.
-The cause of the failures is still unknown. Development is paused pending BASIC tests.
 
 ## Build and test
 
@@ -81,14 +107,17 @@ Install Gowin FPGA Designer with a valid license. From the repository root:
 gw_sh build.tcl
 ```
 
-The expected output is `impl/pnr/wonder_opl4_v9990.fs`. Check the new timing and
+The expected output is `impl/pnr/wonder_opl4_v9990_flagfix.fs`. Check the new timing and
 resource reports for each build; do not reuse an old output after a failed build.
 
-The tested build candidate is in `firmware/`, with its SHA-256 checksum.
+The tested prebuilt image is in `firmware/`, with its SHA-256 checksum.
+For publication, the original `wonder_opl4_v9990_flagfix.fs` was renamed to
+`wonder_opl4_v9990_v0.2.0.fs` without changing any bytes.
 Detailed Italian instructions: [build and test](docs/build-and-test.it.md).
 Reports are in `reports/`; BASIC checks are in `test-msx/`.
 The Python tests in `tests/` check arithmetic equivalence of the FIFO and envelope
-optimizations. They are not a full RTL simulation or hardware validation.
+optimizations. The completion-flag test checks the actual source expression
+against its truth table. These checks are not full RTL simulation or hardware validation.
 
 **YRW801 ROM is not included.** The firmware expects a user-supplied 2,097,152-byte
 image in SPI flash at byte offset `0x200000`. The FPGA bitstream starts at `0x000000`.
@@ -96,6 +125,8 @@ SDRAM addresses are managed by the FPGA and are not Programmer flash addresses.
 The flash log must show the wave ROM starting at `0x200000`, not `0x020000`.
 
 ## Integration changes
+
+- Version 0.2.0: P#6.CE uses `CE_save | STATUS.CE_intr`, separating command completion from P#5 command-busy status.
 
 - Shared tnCart UMA / SDRAM controller for video RAM and OPL4 wave memory.
 - New wave-memory bridge with byte writes, aligned word reads, refresh and watchdog.

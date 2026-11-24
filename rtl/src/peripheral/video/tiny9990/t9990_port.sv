@@ -869,7 +869,7 @@ module T9990_PORT (
     /***************************************************************
      * P#6 INTERRUPT FLAG read
      ***************************************************************/
-    wire [7:0] p6_cd_data = { 5'b00000, CE_save | STATUS.CE, HI_save | STATUS.HI, VI_save | STATUS.VI };
+    wire [7:0] p6_cd_data = { 5'b00000, CE_save | STATUS.CE_intr, HI_save | STATUS.HI, VI_save | STATUS.VI };
 
     /***************************************************************
      * P#6 INTERRUPT FLAG write / update
